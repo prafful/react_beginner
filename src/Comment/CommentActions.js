@@ -3,8 +3,21 @@ import ReactDOM from 'react-dom';
 
 
 class CommentAction extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            name: "Manoj Khanna",
+            counter: 0
+            }
+           
+        this.editComment = this.editComment.bind(this);    
+
+
+    }
     editComment(){
-        console.log("Editing the comment");
+        this.state.counter = this.state.counter + 1;;
+        this.setState({counter: this.state.counter});
+        console.log("Editing the comment"  + this.state.counter + "times!!!");
     }
     reviewComment(){
         console.log("Reviewing the comment");

@@ -1,0 +1,9 @@
+.alphabet{
+    color: red;
+    background-color: pink;
+    float: left;
+    display: block;
+    padding:5px;
+    margin: 5px;
+
+}
