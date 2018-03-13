@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import Comment from './Comment/Comment';
 import HelloReact from './HelloReact';
+import CounterValueParent from "./componentLifeCycle/counterValueParent";
 
 import './css/hello.css';
 
@@ -23,4 +24,13 @@ ReactDOM.render(
                 <br></br>
                 <br></br>
                 <Comment> </Comment>
-            </div>, position);
+                <br></br>
+                
+            </div>, 
+            position);
+
+ReactDOM.render(
+                <div >
+                    <CounterValueParent></CounterValueParent>
+                </div>,
+                document.getElementById('componentlifecycle'));
