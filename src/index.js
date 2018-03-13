@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import Comment from './Comment/Comment';
 import HelloReact from './HelloReact';
 import CounterValueParent from "./componentLifeCycle/counterValueParent";
+import FetchData from './HttpComponent/FetchData';
 
 import './css/hello.css';
 
@@ -34,3 +35,9 @@ ReactDOM.render(
                     <CounterValueParent></CounterValueParent>
                 </div>,
                 document.getElementById('componentlifecycle'));
+
+ReactDOM.render(
+            <div>
+                <FetchData></FetchData>
+            </div>,
+                document.getElementById('remoteData'));                

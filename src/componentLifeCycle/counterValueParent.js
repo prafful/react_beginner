@@ -33,6 +33,7 @@ class CounterValueParent extends React.Component{
     //component life cycle methods start
     componentWillMount(){
         console.log("component will mount: it is just about to mount");
+        //alert("will mount")
     }
 
     componentDidMount(){
