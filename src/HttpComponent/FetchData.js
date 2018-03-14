@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from "axios";
 
+import GetRemoteUser from "./GetRemoteUser";
+
+
 
 class FetchData extends React.Component{
 
@@ -10,21 +13,41 @@ class FetchData extends React.Component{
             this.state = {
                 users:[]
             };
-        }
 
+    
+                
+    }
+
+    callRemoteData(){
+        axios.get('https://jsonplaceholder.typicode.com/users')
+        .then((response)=>(
+            //console.log(response.data);
+            this.setState({users: response.data})
+            //console.log(this.state.users);
+        ));
+    }
+   
 
     componentDidMount(){
-        axios.get('https://jsonplaceholder.typicode.com/users')
-            .then(function(res){
-                console.log(res.data);
-                //this.setState({users: res.data});
-            });
+        this.callRemoteData();
     }
 
     render(){
+        
+        const allUsers = this.state.users.map((user) =>(
+            <GetRemoteUser
+                key={'user-'+user.id}
+                id={user.id}
+                name={user.name}
+                username={user.username}
+                website={user.website}
+            ></GetRemoteUser>
+        ));
+        console.log(allUsers)
+      
         return(
             <div>
-                Calling remote data using axios
+                {allUsers}
             </div>
         );
     }
